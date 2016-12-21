@@ -1,7 +1,10 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: Ravindra
- * Date: 11/7/2016
- * Time: 9:30 PM
- */
+@extends('layouts.admin')
+
+
+
+@section('content')
+
+    <h1>Edit Post</h1>
+
+
+@stop
