@@ -6,14 +6,15 @@ use App\Category;
 use App\Http\Requests\PostsCreateRequest;
 use Illuminate\Http\Request;
 
-use App\Role;
+//use App\Role;
 
 use App\Post;
 
-use App\User;
+//use App\User;
 
 use App\Photo;
 
+//use App\Comment;
 
 use App\Http\Requests;
 use Illuminate\Support\Facades\Auth;
@@ -30,7 +31,7 @@ class AdminPostsController extends Controller
         //
         $posts = Post::all();
 
-        return view('admin.posts.index', compact('posts'));
+        return view('admin.posts.index', compact('posts', 'categories'));
     }
 
     /**
@@ -152,7 +153,7 @@ class AdminPostsController extends Controller
 
         $post->delete();
 
-        return redirect('admin/posts');
+        return redirect('/admin/posts');
 
     }
 
@@ -160,6 +161,8 @@ class AdminPostsController extends Controller
 
         $post = Post::findOrFail($id);
 
-        return view('post', compact('post'));
+        $comments = $post->comments()->whereIsActive(1)->get();
+
+        return view('post', compact('post', 'comments'));
     }
 }

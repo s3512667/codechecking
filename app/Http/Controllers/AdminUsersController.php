@@ -2,23 +2,21 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\UsersRequest;
-
 use App\Http\Requests\UsersEditRequest;
 
-use App\User;
-
-use App\Role;
+use App\Http\Requests\UsersRequest;
 
 use App\Photo;
 
-use App\Post;
+use App\Role;
+
+use App\User;
 
 use Illuminate\Http\Request;
 
-use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Auth;
 
-use App\Http\Requests;
+use Illuminate\Support\Facades\Session;
 
 class AdminUsersController extends Controller
 {
@@ -65,6 +63,8 @@ class AdminUsersController extends Controller
         }else{
 
             $input = $request->all();
+
+            $input['password'] = bcrypt($request->password);
 
         }
 
@@ -142,8 +142,6 @@ class AdminUsersController extends Controller
 
         }
 
-
-//        $input = $request->all();
 
         if ($file = $request->file('photo_id')) {
 
