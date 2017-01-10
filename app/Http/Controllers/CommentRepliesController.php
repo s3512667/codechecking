@@ -43,7 +43,7 @@ class CommentRepliesController extends Controller
 
     public function createReply(Request $request){
 
-//        return "It Works...";
+//        return "It works..";
 
         $user = Auth::user();
 

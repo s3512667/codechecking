@@ -17,23 +17,26 @@ elixir(function(mix) {
     .styles([
 
         'libs/font-awesome.css',
+        'libs/bootstrap.css',
+        'libs/bootstrap.min.css',
         'libs/metisMenu.css',
         'libs/sb-admin-2.css',
         'libs/blog-post.css',
-        'libs/styles.css',
-        'libs/bootstrap.css',
-        'libs/bootstrap.min.css'
+        'libs/styles.css'
+
 
     ], './public/css/libs.css')
 
     .scripts([
 
         'libs/jquery.js',
+        'libs/bootstrap.js',
+        'libs/bootstrap.min.js',
         'libs/metisMenu.js',
         'libs/sb-admin-2.js',
-        'libs/scripts.js',
-        'libs/bootstrap.js',
-        'libs/bootstrap.min.js'
+        'libs/scripts.js'
+
+
 
 
 
