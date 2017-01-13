@@ -56,8 +56,9 @@ class AdminPostsController extends Controller
     public function store(PostsCreateRequest $request)
     {
 
-
         $input = $request->all();
+
+//        $title = str_slug($request->title, '-'); //this can e added to database column 'slug'
 
         $user = Auth::user();
 
@@ -157,9 +158,9 @@ class AdminPostsController extends Controller
 
     }
 
-    public function post($id){
+    public function post($slug){
 
-        $post = Post::findOrFail($id);
+        $post = Post::findBySlugOrFail($slug);
 
         $comments = $post->comments()->whereIsActive(1)->get();
 

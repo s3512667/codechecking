@@ -91,7 +91,7 @@
 @else
 
 
-    <h1 class="text-center">No...s comment</h1>
+    <h1 class="text-center">No Comments</h1>
 
 @endif
 
