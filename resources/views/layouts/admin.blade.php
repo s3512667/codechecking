@@ -119,7 +119,7 @@
                         <!-- /input-group -->
                     </li>
                     <li>
-                        <a href="/admin"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                        <a href="/admin"><i class="fa fa-dashboard fa-fw">Users</i> Dashboard</a>
                     </li>
 
                     <li>
@@ -165,9 +165,9 @@
                                 <a href="{{route('admin.categories.index')}}">All Categories</a>
                             </li>
 
-                            <li>
-                                <a href="{{route('admin.categories.create')}}">Create Category</a>
-                            </li>
+                            {{--<li>--}}
+                                {{--<a href="{{route('admin.categories.create')}}">Create Category</a>--}}
+                            {{--</li>--}}
 
                         </ul>
                         <!-- /.nav-second-level -->
